@@ -1,0 +1,256 @@
+<!DOCTYPE html PUBLIC>
+<html>
+
+<head>
+    <title>Title</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <script src="admin.js" defer></script>
+</head>
+
+<body>
+    <div class="container">
+        <div id="header">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12">
+                    <div class="header_top">
+                        <div class="header_top_left">
+                            <ul class="top_nav">
+                                <li class="home"><a href="/"><i class="fa fa-home"></i></a></li>
+                                <li><a href="/dashboard">Dashboard</a></li>
+                                <li><a href="/login">Update</a></li>
+                            </ul>
+                        </div>
+                        <div class="header_top_right">
+                            <p>
+                                &nbsp;
+                                [
+                                <a href="/login">Sign Out</a>
+                                ]
+                                &nbsp;&nbsp;
+                                <script>
+                                    document.write(new Date().toDateString());
+                                </script>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-12 col-md-12 col-sm-12">
+                    <div class="header_bottom">
+                        <div class="add_banner">
+                            <a href="#">
+                                <img src="#" alt="" /></a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12 col-md-12">
+            </div>
+        </div>
+
+        <div class="main">
+            <div id="contentSection">
+                <div class="row">
+                    <div class="col-lg-4 col-md-4 col-sm-4">
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-4" id="inputContainer">
+                        <div class="left_content">
+                            <div class="contact_area">
+                                <div class="panel panel-danger">
+                                    <div class="panel-heading">
+                                        <h2 style="text-align: center">
+                                            <i class="fa fa-user-circle" aria-hidden="true"></i>ADMIN</h2>
+                                    </div>
+                                    <div class="table-responsive table-bordered">
+                                        <div class="panel-body">
+                                            <div class="row"
+                                                style="margin-top: -15px; padding-bottom: 1.5%; padding-left: 0.5%; padding-right: 0.5%"
+                                                ;>
+                                                <div class="tab">
+                                                    <button class="tablinks" id="default"
+                                                        onclick="add(event, 'productItem')">Product
+                                                        Item</button>
+                                                    <button class="tablinks" onclick="add(event, 'outCode')">Outlet
+                                                        Code</button>
+                                                    <button class="tablinks" onclick="add(event, 'empCode')">Employee
+                                                    </button>
+                                                    <button class="tablinks" onclick="add(event, 'adminAccess')">Admin
+                                                        Access</button>
+                                                </div>
+                                                <div id="productItem" class="tabcontent">
+                                                    <h3>Add Product Item</h3>
+                                                    <div class="row"
+                                                        style="padding-bottom: 1.5%; padding-top: 2%; padding-left: 0.5%; margin-left: 75px;">
+                                                        <div class="col-lg-12 col-md-12 col-sm-12">
+                                                            <form action="#" method="post"
+                                                                enctype="multipart/form-data">
+                                                                <input type="file" name="productExcel" accept="*.xlsx"/>
+                                                                <input type="submit" name="upload"
+                                                                    value="Upload Product Item"
+                                                                    class="btn btn-danger" />
+                                                                <input type="reset" name="" value="Reset"
+                                                                    class="btn btn-danger" />
+                                                            </form>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div id="outCode" class="tabcontent">
+                                                    <h3>Add Outlet Code</h3>
+                                                    <div class="row"
+                                                        style="padding-bottom: 1.5%; padding-top: 2%; padding-left: 0.5%; margin-left: 75px;">
+                                                        <div class="col-lg-12 col-md-12 col-sm-12">
+                                                            <form action="outlet-excel" method="post"
+                                                                enctype="multipart/form-data">
+                                                                <input type="file" name="outletExcel" accept="*.xlsx"/>
+                                                                <input type="submit" name="upload"
+                                                                    value="Upload Outlet Code"
+                                                                    class="btn btn-danger"/>
+                                                                <input type="reset" name="" value="Reset"
+                                                                    class="btn btn-danger" />
+                                                            </form>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div id="empCode" class="tabcontent">
+                                                    <div class="row" style="padding-bottom: 2%; padding-top: 2%">
+                                                        <div class="col-lg-3 col-md-3 col-sm-3"
+                                                            style="text-align: left">
+                                                            <label for="empCode">Employee Code*</label>
+                                                        </div>
+                                                        <div class="col-lg-3 col-md-3 col-sm-3">
+                                                            <input id="empCode" name="employeeCode" type="text"
+                                                                class="form-control" style="resize: none" required />
+                                                        </div>
+                                                    </div>
+                                                    <div class="row" style="padding-bottom: 2%">
+                                                        <div class="col-lg-3 col-md-3 col-sm-3"
+                                                            style="text-align: left">
+                                                            <label for="empName">Employee Name*</label>
+                                                        </div>
+                                                        <div class="col-lg-3 col-md-3 col-sm-3">
+                                                            <input name="employeeName" type="text" maxlength="50"
+                                                                id="empName" class="form-control" required />
+                                                        </div>
+                                                    </div>
+                                                    <div class="row" style="padding-bottom: 2%">
+                                                        <div class="col-lg-3 col-md-3 col-sm-3"
+                                                            style="text-align: left">
+                                                            <label for="zone">zone</label>
+                                                        </div>
+                                                        <div class="col-lg-3 col-md-3 col-sm-3">
+                                                            <select id="zone" class="form-control" name="zone">
+                                                                <option value="0" selected="selected">
+                                                                    ----------select----------</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row"
+                                                        style="padding-bottom: 1.5%; padding-top: 2%; padding-left: 0.5%; margin-left: 200px;">
+                                                        <div class="col-lg-12 col-md-12 col-sm-12">
+                                                            <input type="submit" name="update" value="Update" onclick=""
+                                                                class="btn btn-danger" />
+
+                                                            <input type="reset" name="" value="Reset" onclick=""
+                                                                class="btn btn-danger" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div id="adminAccess" class="tabcontent">
+                                                    <div class="row" style="padding-bottom: 2%; padding-top: 2%">
+                                                        <div class="col-lg-3 col-md-3 col-sm-3"
+                                                            style="text-align: left">
+                                                            <label for="empCode">Employee Code*</label>
+                                                        </div>
+                                                        <div class="col-lg-3 col-md-3 col-sm-3">
+                                                            <input id="empCode" name="employeeCode" type="text"
+                                                                class="form-control" style="resize: none" required />
+                                                        </div>
+                                                    </div>
+                                                    <div class="row" style="padding-bottom: 2%">
+                                                        <div class="col-lg-3 col-md-3 col-sm-3"
+                                                            style="text-align: left">
+                                                            <label for="adminName">Admin Name*</label>
+                                                        </div>
+                                                        <div class="col-lg-3 col-md-3 col-sm-3">
+                                                            <input name="adminName" type="text" maxlength="50"
+                                                                id="adminName" class="form-control" required />
+                                                        </div>
+                                                    </div>
+                                                    <div class="row"
+                                                        style="padding-bottom: 2%">
+                                                        <div class="col-lg-3 col-md-3 col-sm-3" style="text-align: left">
+                                                            <label for="userIdLabel">User Id*</label>
+                                                        </div>
+                                                        <div class="col-lg-3 col-md-3 col-sm-3">
+                                                            <input name="userId" type="text" maxlength="12"
+                                                                id="adminUserId" class="form-control"
+                                                                required />
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="row"
+                                                        style="padding-bottom: 2%">
+                                                        <div class="col-lg-3 col-md-3 col-sm-3" style="text-align: left">
+                                                            <label for="passwordLabel"> Password*
+                                                            </label>
+                                                        </div>
+                                                        <div class="col-lg-3 col-md-3 col-sm-3">
+                                                            <input name="password" type="text" id="adminPassword"
+                                                                class="form-control" required />
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="row"
+                                                        style="padding-bottom: 2%">
+                                                        <div class="col-lg-3 col-md-3 col-sm-3" style="text-align: left">
+                                                            <label for="confirmPasswordLabel"> Confirm Password*
+                                                            </label>
+                                                        </div>
+                                                        <div class="col-lg-3 col-md-3 col-sm-3">
+                                                            <input name="confirmPassword" type="password" id="adminConfirmPassword"
+                                                                class="form-control" onchange="confirmPassword()" required />
+                                                        </div>
+                                                    </div>
+                                                    <div class="row"
+                                                        style="padding-bottom: 1.5%; padding-top: 2%; padding-left: 0.5%; margin-left: 75px;">
+                                                        <div class="col-lg-12 col-md-12 col-sm-12">
+                                                            <input type="submit" name="update" value="Update" onclick=""
+                                                                class="btn btn-danger" />
+
+                                                            <input type="reset" name="clear" value="Reset" onclick=""
+                                                                class="btn btn-danger" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="panel-footer">
+                                        <p style="display:inline-block;color:Red;width:302px;"></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-4">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="footer">
+            <div class="footer_bottom">
+                <p class="copyright"></p>
+                <p class="developer"> <a href="#"></a>
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Title</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" href="bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <script src="qrcode.js" defer></script>
+    <script src="html5qrcode.js" defer></script>
+    <script src="order.js" defer></script>
+    <script src="scan.js" defer></script>
+    <script src="ajax.js" defer></script>
+</head>
+
+<body>
+    <div class="container">
+        <div id="header">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12">
+                    <div class="header_top">
+                        <div class="header_top_left">
+                            <ul class="top_nav">
+                                <li><a href="/">Register</a></li>
+                                <li><a href="/order">Order</a></li>
+                                <li><a href="/distributor">Distributor</a></li>
+                            </ul>
+                        </div>
+                        <div class="header_top_right">
+                            <p>
+                                &nbsp;
+                                [
+                                <a href="/login" id="#">Admin</a>
+                                ]
+                                &nbsp;&nbsp;
+                                <script>
+                                    document.write(new Date().toDateString());
+                                </script>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-12 col-md-12 col-sm-12">
+                    <div class="header_bottom">
+                        <div class="add_banner">
+                            <a href="#">
+                                <img src="" alt="" />
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12 col-md-12">
+            </div>
+        </div>
+        <div class="main">
+            <div id="contentSection">
+                <div class="row">
+                    <div class="col-lg-0 col-md-0 col-sm-0">
+                    </div>
+                    <div class="col-lg-12 col-md-12 col-sm-12">
+                        <div class="left_content">
+                            <div class="contact_area">
+                                <div class="panel panel-danger">
+                                    <form method="post" action="/order-data" name="order-form" id="order-form">
+                                        <div class="panel-body">
+                                            <center>
+                                                <input id="outletCode" type="text" class="outletCode" readonly required/>
+                                            </center>
+                                            <div class="row" style="padding-bottom: 0.5%">
+                                                <div class="col-lg-3 col-md-3 col-sm-3" style="text-align: left">
+                                                    <label for="empCode">Employee Code*</label>
+                                                </div>
+                                                <div class="col-lg-3 col-md-3 col-sm-3">
+                                                    <select id="empCode" class="form-control" name="empCode"
+                                                        onchange="openCamera(this)">
+                                                        <option selected="selected" value="0">
+                                                            ------------Select----------</option>
+                                                    </select>
+                                                </div>
+                                                <div class="col-lg-3 col-md-3 col-sm-3" style="text-align: left">
+                                                    <label for="distribCode">Distributor Code*</label>
+                                                </div>
+                                                <div class="col-lg-3 col-md-3 col-sm-3">
+                                                    <select id="distribCode" class="form-control" name="distribCode">
+                                                        <option selected="selected" value="0">
+                                                            ------------Select----------</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="container">
+                                                <div class="scan">
+                                                    <div class="col-md-12" style="text-align: center;">
+                                                        <div id="qr" class="qr" style="display: inline-block;">
+                                                            <div class="placeholder"></div>
+                                                        </div>
+                                                        <div id="scannedCodeContainer"></div>
+                                                        <div id="feedback"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row" style="padding-bottom: 0.5%">
+                                                <div class="col-lg-3 col-md-3 col-sm-3" style="text-align: left">
+                                                    <label for="productList">Products</label>
+                                                </div>
+                                                <div class="col-lg-3 col-md-3 col-sm-3">
+                                                    <select id="productList" class="form-control" onchange="addList()">
+                                                        <option selected="selected" value="0">
+                                                            ------------Select----------</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                    <div class="row" style="padding-bottom: 0.5%">
+                                        <div class="col-lg-12 col-md-12 col-sm-12" style="text-align: center">
+                                            <input type="submit" value="Order" id="order" class="btn btn-danger"
+                                                form="order-form" />
+                                            <input type="reset" value="Cancel" id="reset" class="btn btn-danger"
+                                                form="order-form" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="footer">
+                <div class="footer_bottom">
+                    <p class="copyright"></p>
+                    <p class="developer"></a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html PUBLIC>
+<html>
+
+<head>
+    <title>Title</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <script src="login.js" defer></script>
+</head>
+
+<body>
+    <div class="container">
+        <div id="header">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12">
+                    <div class="header_top">
+                        <div class="header_top_left">
+                            <ul class="top_nav">
+                                <li><a href="/">Register</a></li>
+                                <li><a href="/order">Order</a></li>
+                                <li><a href="/distributor">Distributor</a></li>
+                            </ul>
+                        </div>
+                        <div class="header_top_right">
+                            <p>
+                                &nbsp;
+                                [
+                                <a href="/login">Admin</a>
+                                ]
+                                &nbsp;&nbsp;
+                                <script>
+                                    document.write(new Date().toDateString());
+                                </script>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-12 col-md-12 col-sm-12">
+                    <div class="header_bottom">
+                        <div class="add_banner">
+                            <a href="#">
+                                <img src="#" alt="" /></a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12 col-md-12">
+            </div>
+        </div>
+
+        <form method="post" action="/admin" id="loginForm">
+            <div class="main">
+                <div id="contentSection">
+                    <div class="row">
+                        <div class="col-lg-4 col-md-4 col-sm-4">
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-4">
+                            <div class="left_content">
+                                <div class="contact_area">
+                                    <div class="panel panel-danger">
+                                        <div class="panel-heading">
+                                            <h2 style="text-align: center">
+                                                <i class="fa fa-user-circle" aria-hidden="true"></i>ADMIN</h2>
+                                        </div>
+                                        <div class="table-responsive table-bordered">
+                                            <div class="panel-body">
+                                                <div class="row"
+                                                    style="padding-bottom: 1.5%; padding-top: 1.5%; padding-left: 0.5%">
+                                                    <div class="col-lg-12 col-md-12 col-sm-12">
+                                                        <label for="userIdLabel">User Id*</label>
+                                                    </div>
+                                                    <div class="col-lg-12 col-md-12 col-sm-12">
+                                                        <input name="userId" type="text" maxlength="12" id="adminUserId"
+                                                            class="form-control" placeholder="User Id" required />
+                                                    </div>
+                                                </div>
+
+                                                <div class="row"
+                                                    style="padding-bottom: 1.5%; padding-top: 1.5%; padding-left: 0.5%">
+                                                    <div class="col-lg-12 col-md-12 col-sm-12">
+                                                        <label for="passwordLabel"> Password*
+                                                        </label>
+                                                    </div>
+                                                    <div class="col-lg-12 col-md-12 col-sm-12">
+                                                        <input name="password" type="password" id="adminPassword"
+                                                            class="form-control" placeholder="Password" required />
+                                                    </div>
+                                                </div>
+                                                <div class="row"
+                                                    style="padding-bottom: 1.5%; padding-top: 2%; padding-left: 0.5%; margin-left: 75px;">
+                                                    <div class="col-lg-12 col-md-12 col-sm-12">
+                                                        <input type="submit" name="login" value="Login" id="login"
+                                                            class="btn btn-danger" onclick="return validate()" />
+
+                                                        <input type="reset" name="clear" value="clear" id="clear"
+                                                            class="btn btn-danger" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="panel-footer">
+                                            <p style="display:inline-block;color:Red;width:302px;"></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-4">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+        <div id="footer">
+            <div class="footer_bottom">
+                <p class="copyright"></p>
+                <p class="developer"></a>
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

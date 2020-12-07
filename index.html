@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Title</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" href="bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <script src="qrcode.js" defer></script>
+    <script src="html5qrcode.js" defer></script>
+    <script src="scan.js" defer></script>
+    <script src="ajax.js" defer></script>
+</head>
+
+<body>
+    <div class="container">
+        <div id="header">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12">
+                    <div class="header_top">
+                        <div class="header_top_left">
+                            <ul class="top_nav">
+                                <li><a href="/">Register</a></li>
+                                <li><a href="/order">Order</a></li>
+                                <li><a href="/distributor">Distributor</a></li>
+                            </ul>
+                        </div>
+                        <div class="header_top_right">
+                            <p>
+                                &nbsp;
+                                [
+                                <a href="/login">Admin</a>
+                                ]
+                                &nbsp;&nbsp;
+                                <script>
+                                    document.write(new Date().toDateString());
+                                </script>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-12 col-md-12 col-sm-12">
+                    <div class="header_bottom">
+                        <div class="add_banner">
+                            <a href="#">
+                                <img src="#" alt="" />
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12 col-md-12">
+            </div>
+        </div>
+        <div class="main">
+            <div id="contentSection">
+                <div class="row">
+                    <div class="col-lg-0 col-md-0 col-sm-0">
+                    </div>
+                    <div class="col-lg-12 col-md-12 col-sm-12">
+                        <div class="left_content">
+                            <div class="contact_area">
+                                <div class="panel panel-danger">
+                                    <center>
+                                        <h5>
+                                            <b>-----------Outlet Registration Form-----------</b>
+                                        </h5>
+                                    </center>
+                                    <form method="post" action="/retail-data" name="registrationForm">
+                                        <div class="panel-body">
+                                            <div class="row" style="padding-bottom: 0.5%">
+                                                <div class="col-lg-3 col-md-3 col-sm-3" style="text-align: left">
+                                                    <label for="empCode">Employee Code*</label>
+                                                </div>
+                                                <div class="col-lg-3 col-md-3 col-sm-3">
+                                                    <select id="empCode" class="form-control" name="empCode"
+                                                        onchange="openCamera(this)">
+                                                        <option value="0" selected="selected">select</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="container">
+                                                <div class="scan">
+                                                    <div class="col-md-12" style="text-align: center;">
+                                                        <div id="qr" class="qr" style="display: inline-block;">
+                                                            <div class="placeholder"></div>
+                                                        </div>
+                                                        <div id="scannedCodeContainer"></div>
+                                                        <div id="feedback"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row" style="padding-bottom: 3%">
+                                                <div class="col-lg-3 col-md-3 col-sm-3" style="text-align: left">
+                                                    <label for="outletCode">Outlet Code*</label>
+                                                </div>
+                                                <div class="col-lg-3 col-md-3 col-sm-3">
+                                                    <input id="outletCode" name="outletCode" type="text"
+                                                        class="form-control" style="resize: none" readonly />
+                                                </div>
+                                            </div>
+                                            <div class="row" style="padding-bottom: 3%">
+                                                <div class="col-lg-3 col-md-3 col-sm-3" style="text-align: left">
+                                                    <label for="outletName">Outlet Name*</label>
+                                                </div>
+                                                <div class="col-lg-3 col-md-3 col-sm-3">
+                                                    <input name="outletName" type="text" maxlength="50" id="outletName"
+                                                        class="form-control" />
+                                                </div>
+                                            </div>
+                                            <div class="row" style="padding-bottom: 3%">
+                                                <div class="col-lg-3 col-md-3 col-sm-3" style="text-align: left">
+                                                    <label for="ownerName">Owner Name*</label>
+                                                </div>
+                                                <div class="col-lg-3 col-md-3 col-sm-3">
+                                                    <input name="ownerName" type="text" maxlength="50" id="ownerName"
+                                                        class="form-control"
+                                                        style="color:Black;background-color:White;resize: none" />
+                                                </div>
+                                            </div>
+                                            <div class="row" style="padding-bottom: 3%">
+                                                <div class="col-lg-3 col-md-3 col-sm-3" style="text-align: left">
+                                                    <label for="contactNum">Contact No.*</label>
+                                                </div>
+                                                <div class="col-lg-3 col-md-3 col-sm-3" style="text-align: left">
+                                                    <input name="contactNum" type="text" maxlength="10" id="contactNum"
+                                                        class="form-control" placeholder="" />
+                                                </div>
+                                            </div>
+                                            <div class="row" style="padding-bottom: 3%">
+                                                <div class="col-lg-3 col-md-3 col-sm-3" style="text-align: left">
+                                                    <label for="outletAddr">Outlet Address*</label>
+                                                </div>
+                                                <div class="col-lg-3 col-md-3 col-sm-3" style="text-align: left">
+                                                    <textarea name="outletAddr" id="outletAddr"
+                                                        class="form-control"></textarea>
+                                                </div>
+                                            </div>
+                                            <div class="row" style="padding-bottom: 3%">
+                                                <div class="col-lg-3 col-md-3 col-sm-3" style="text-align: left">
+                                                    <label for="pin">PIN*</label>
+                                                </div>
+                                                <div class="col-lg-3 col-md-3 col-sm-3" style="text-align: left">
+                                                    <input name="pin" type="text" maxlength="6" id="pin"
+                                                        class="form-control" placeholder="" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row" style="padding-bottom: 3%">
+                                            <div class="col-lg-12 col-md-12 col-sm-12" style="text-align: center">
+                                                <input type="submit" value="Register" id="register"
+                                                    class="btn btn-danger" />
+                                                <input type="reset" id="reset" value="Cancel" class="btn btn-danger"
+                                                    onclick="stopScan()" />
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="footer">
+                <div class="footer_bottom">
+                    <p class="copyright"></p>
+                    <p class="developer"></a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
